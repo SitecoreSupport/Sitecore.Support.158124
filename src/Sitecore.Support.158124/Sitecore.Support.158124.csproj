@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="sitecore\shell\client\services\assets\lib\beaconApi.js" />
+    <Content Include="sitecore\shell\client\services\assets\lib\beaconApi.min.js" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

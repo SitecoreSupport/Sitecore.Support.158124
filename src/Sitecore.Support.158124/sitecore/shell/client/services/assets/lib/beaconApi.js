@@ -6543,9 +6543,10 @@ var service = function (endpoint) {
     var settled = false;
     var promiseStack = [];
     
-    utils.forEach(eventStack, function (evt) {
-      promiseStack.push(flushEvent(evt));
-    });
+    // Fix 158124
+    while (eventStack.length > 0) {
+        promiseStack.push(flushEvent(eventStack.pop()));
+    }
     
     Q.allSettled(promiseStack).then(function () {
       settled = true;
